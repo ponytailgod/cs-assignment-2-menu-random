@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6fb;
+  color: #1f2937;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.hero {
+  max-width: 900px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #e0ecff;
+  color: #2563eb;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+h1 {
+  margin: 14px 0 8px;
+  font-size: 44px;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.card {
+  background: white;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.form-card h2,
+.result-card h2 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  margin-top: 8px;
+  padding: 13px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 15px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 14px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.hidden {
+  display: none;
+}
+
+.risk-label {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: bold;
+  background: #e5e7eb;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 22px 0;
+}
+
+.result-grid div {
+  padding: 16px;
+  border-radius: 16px;
+  background: #f9fafb;
+}
+
+.result-grid span {
+  display: block;
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.result-grid strong {
+  font-size: 22px;
+}
+
+.advice {
+  padding: 18px;
+  border-radius: 16px;
+  background: #f3f4f6;
+  line-height: 1.6;
+  font-weight: bold;
+}
+
+.safe {
+  border: 3px solid #22c55e;
+}
+
+.caution {
+  border: 3px solid #f59e0b;
+}
+
+.danger {
+  border: 3px solid #ef4444;
+}
+
+.emergency {
+  border: 3px solid #7c2d12;
+}
+
+@media (max-width: 800px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+}
