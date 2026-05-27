@@ -9,53 +9,55 @@
 <body>
   <main class="app">
     <section class="hero">
-      <p class="badge">Assignment Risk Calculator</p>
+      <p class="badge">Assignment Risk & Calendar</p>
       <h1>Deadline Radar</h1>
       <p class="subtitle">
-        과제의 마감일, 남은 작업량, 난이도를 바탕으로 마감 위험도를 계산해주는 웹앱입니다.
+        과제의 마감 위험도를 계산하고, 마감일을 캘린더에 표시해주는 대학생용 과제 관리 웹앱입니다.
       </p>
     </section>
 
-    <section class="container">
-      <form id="taskForm" class="card form-card">
+    <section class="main-layout">
+      <section class="card form-card">
         <h2>과제 정보 입력</h2>
 
-        <label>
-          과제명
-          <input type="text" id="taskName" placeholder="예: 컴퓨터 개론 과제 2" required />
-        </label>
+        <form id="taskForm">
+          <label>
+            과제명
+            <input type="text" id="taskName" placeholder="예: 컴퓨터 개론 과제 2" required />
+          </label>
 
-        <label>
-          마감일
-          <input type="date" id="deadline" required />
-        </label>
+          <label>
+            마감일
+            <input type="date" id="deadline" required />
+          </label>
 
-        <label>
-          예상 총 소요 시간
-          <input type="number" id="totalHours" min="0.5" step="0.5" placeholder="예: 10" required />
-        </label>
+          <label>
+            예상 총 소요 시간
+            <input type="number" id="totalHours" min="0.5" step="0.5" placeholder="예: 10" required />
+          </label>
 
-        <label>
-          현재 진행률 (%)
-          <input type="number" id="progress" min="0" max="100" placeholder="예: 30" required />
-        </label>
+          <label>
+            현재 진행률 (%)
+            <input type="number" id="progress" min="0" max="100" placeholder="예: 30" required />
+          </label>
 
-        <label>
-          난이도
-          <select id="difficulty">
-            <option value="0.9">쉬움</option>
-            <option value="1" selected>보통</option>
-            <option value="1.2">어려움</option>
-          </select>
-        </label>
+          <label>
+            난이도
+            <select id="difficulty">
+              <option value="0.9">쉬움</option>
+              <option value="1" selected>보통</option>
+              <option value="1.2">어려움</option>
+            </select>
+          </label>
 
-        <label>
-          하루 투자 가능 시간
-          <input type="number" id="dailyHours" min="0.5" step="0.5" placeholder="예: 2" required />
-        </label>
+          <label>
+            하루 투자 가능 시간
+            <input type="number" id="dailyHours" min="0.5" step="0.5" placeholder="예: 2" required />
+          </label>
 
-        <button type="submit">위험도 계산하기</button>
-      </form>
+          <button type="submit">위험도 계산하고 캘린더에 추가하기</button>
+        </form>
+      </section>
 
       <section id="resultCard" class="card result-card hidden">
         <p id="riskLabel" class="risk-label">결과</p>
@@ -82,6 +84,38 @@
 
         <p id="advice" class="advice">추천 행동이 여기에 표시됩니다.</p>
       </section>
+    </section>
+
+    <section class="card calendar-card">
+      <div class="calendar-header">
+        <div>
+          <p class="section-label">Deadline Calendar</p>
+          <h2>과제 마감 캘린더</h2>
+        </div>
+
+        <div class="calendar-controls">
+          <button type="button" id="prevMonth">이전 달</button>
+          <button type="button" id="nextMonth">다음 달</button>
+        </div>
+      </div>
+
+      <p class="calendar-guide">
+        과제를 계산하면 해당 마감일에 자동으로 표시됩니다. 위험도에 따라 색상도 함께 표시됩니다.
+      </p>
+
+      <h3 id="calendarTitle">2026년 5월</h3>
+
+      <div class="week-row">
+        <span>일</span>
+        <span>월</span>
+        <span>화</span>
+        <span>수</span>
+        <span>목</span>
+        <span>금</span>
+        <span>토</span>
+      </div>
+
+      <div id="calendarGrid" class="calendar-grid"></div>
     </section>
   </main>
 
